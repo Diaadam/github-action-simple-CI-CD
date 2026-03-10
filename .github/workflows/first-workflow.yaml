@@ -11,5 +11,13 @@ jobs:           # Plural 'jobs'
     runs-on: ubuntu-latest
     steps:
       - name: runs bash commands
-        run: echo "first workflow" # Aligned with 'name'
-        shell: bash                # Aligned with 'name'
+        run: echo "first workflow" 
+        shell: bash                
+
+      - name: before the checkout action
+        run: ls -al 
+        shell: bash                
+
+      - name: after the checkout action
+        run: ls -al 
+        shell: bash                

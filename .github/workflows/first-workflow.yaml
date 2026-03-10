@@ -19,5 +19,6 @@ jobs:           # Plural 'jobs'
         shell: bash                
 
       - name: after the checkout action
+        uses: actions/checkout@v6
         run: ls -al 
         shell: bash                

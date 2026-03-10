@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - "main"  # Space after dash, plural 'branches'
+  pull-request:
+    branches:
+      - "main"
+    types:
+      - "closed"
+      -  "open"
+
 
 jobs:           # Plural 'jobs'
   first-work-flow:

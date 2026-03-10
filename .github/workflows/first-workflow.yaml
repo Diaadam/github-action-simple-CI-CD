@@ -3,32 +3,30 @@ name: first-work-flow
 on:
   push:
     branches:
-      - "main"  # Space after dash, plural 'branches'
-  pull-request:
+      - "main"
+  pull_request:      # Fixed: must be underscore (_)
     branches:
       - "main"
     types:
       - "closed"
-      -  "open"
+      - "opened"     # Note: The standard type is "opened", not "open"
 
-
-jobs:           # Plural 'jobs'
+jobs:
   first-work-flow:
     name: first-work-flow-job
     runs-on: ubuntu-latest
     steps:
       - name: runs bash commands
-        run: echo "first workflow" 
-        shell: bash                
+        run: echo "first workflow"
+        shell: bash
 
       - name: before the checkout action
-        run: ls -al 
-        shell: bash                
+        run: ls -al
+        shell: bash
 
       - name: checkout action
-        uses: actions/checkout@v6
-
+        uses: actions/checkout@v4 # Fixed: Using the stable v4 version
 
       - name: after the checkout action
-        run: ls -al 
-        shell: bash                
+        run: ls -al
+        shell: bash
